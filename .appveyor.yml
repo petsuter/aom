@@ -6,7 +6,7 @@ platform: x64
 configuration: Release
 
 build:
-  project: c:\projects\aom\build\aom.sln
+  project: c:\projects\aom\_dist\aom.sln
 
 install:
   - mkdir C:\yasm
@@ -20,3 +20,4 @@ before_build:
   - mkdir _dist
   - cd _dist
   - cmake c:\projects\aom -G "Visual Studio 14 2015"
+  - dir
