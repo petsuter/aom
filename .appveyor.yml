@@ -19,4 +19,4 @@ before_build:
   - cd c:\projects\aom
   - mkdir _dist
   - cd _dist
-  - cmake c:\projects\aom -G "Visual Studio 15 2015"
+  - cmake c:\projects\aom -G "Visual Studio 14 2015"
