@@ -17,6 +17,6 @@ install:
 before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
   - cd c:\projects\aom
-  - mkdir build
-  - cd build
+  - mkdir _dist
+  - cd _dist
   - cmake c:\projects\aom -G "Visual Studio 15 2015"
