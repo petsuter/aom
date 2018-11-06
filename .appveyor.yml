@@ -6,7 +6,7 @@ platform: x64
 configuration: Release
 
 artifacts: &default_artifacts
-    - path: 'C:\projects\aom\_dist\Release\*.*'
+    - path: '_dist\Release\*.*'
       name: aom
 
 build:
