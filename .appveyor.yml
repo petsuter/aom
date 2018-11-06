@@ -1,0 +1,23 @@
+os: Visual Studio 2015
+
+clone_folder: c:\projects\aom
+
+platform: x64
+configuration: Release
+
+build:
+  project: c:\projects\aom\build\aom.sln
+
+install:
+  - mkdir C:\yasm
+  - set YASM_URL="http://www.tortall.net/projects/yasm/releases/yasm-1.3.0-win64.exe"
+  - appveyor DownloadFile %YASM_URL% -FileName yasm.exe
+  - 7z x yasm.zip -oC:\yasm > nul
+  - set PATH=C:\yasm;%PATH%
+
+before_build:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
+  - cd c:\projects\aom
+  - mkdir build
+  - cd build
+  - cmake c:\projects\aom -G "Visual Studio 15 2015"
